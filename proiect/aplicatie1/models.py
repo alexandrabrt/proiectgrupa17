@@ -12,3 +12,10 @@ class Location(models.Model):
     def __str__(self):
         return f"{self.city} {self.country}"
 
+
+class Pontaj(models.Model):
+
+    user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    start_date = models.DateTimeField()
+    end_date = models.DateTimeField(null=True)
+

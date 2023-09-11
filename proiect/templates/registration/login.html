@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+    <form method="POST">
+    {% csrf_token %}
+    <div class="col-md-2">
+        <label>Username</label>
+        <input class="form-control" name="username" type="text">
+
+        <label>Password</label>
+        <input class="form-control" name="password" type="password">
+
+        <button type="submit" class="btn btn-info">Login</button>
+        <span>{{ form.non_field_errors }}</span>
+    </div>
+    </form>
+{% endblock %}

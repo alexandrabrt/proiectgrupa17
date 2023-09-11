@@ -25,6 +25,12 @@
                     </td>
                     <td>
                         <a class="btn btn-success" href="{% url 'aplicatie1:modifica' item.id %}">Editare</a>
+                        <a class="btn btn-danger" href="{% url 'aplicatie1:sterge' item.id %}">Delete</a>
+                        {% if item.active is True %}
+                            <a class="btn btn-info" href="{% url 'aplicatie1:dezactiveaza' item.id %}">Deactivate</a>
+                        {% else %}
+                            <a class="btn btn-info" href="{% url 'aplicatie1:activeaza' item.id %}">Activate</a>
+                        {% endif %}
                     </td>
                 </tr>
             {% endfor %}
