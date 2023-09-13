@@ -1,7 +1,10 @@
 <html>
 <head>
+    {% load static %}
     <title>Proiect Django</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+{#    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">#}
+    <link rel="stylesheet" href="{% static 'css/bootstrap441.min.css' %}" type="text/css">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="container">
