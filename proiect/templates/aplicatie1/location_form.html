@@ -5,6 +5,7 @@
 {#        color: red;#}
 {#    }#}
 {#    </style>#}
+    {{ valoare }}
     <form method="POST">
         {% csrf_token %}
         {% for field in form %}

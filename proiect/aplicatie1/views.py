@@ -25,6 +25,11 @@ class CreateLocationView(LoginRequiredMixin, CreateView):
         data.update({'pk': None})
         return data
 
+    def get_context_data(self, **kwargs):
+        data = super(CreateLocationView, self).get_context_data(*kwargs)
+        data['valoare'] = 'Ala bala'
+        return data
+
 class UpdateLocationView(LoginRequiredMixin, UpdateView):
     model = Location
     # fields = ['city', 'country']
@@ -35,6 +40,11 @@ class UpdateLocationView(LoginRequiredMixin, UpdateView):
     def get_form_kwargs(self):
         data = super(UpdateLocationView, self).get_form_kwargs()
         data.update({'pk': self.kwargs['pk']})
+        return data
+
+    def get_context_data(self, **kwargs):
+        data = super(UpdateLocationView, self).get_context_data(*kwargs)
+        data['valoare'] = 'Ala bala'
         return data
 
     def get_success_url(self):
