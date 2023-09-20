@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'aplicatie1',
     'aplicatie2',
+    'userprofile',
 ]
 
 MIDDLEWARE = [
@@ -130,7 +131,7 @@ LOGIN_REDIRECT_URL = '/location/'
 LOGOUT_REDIRECT_URL = '/'
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
-SESSION_COOKIE_AGE = 5
+SESSION_COOKIE_AGE = 10000
 LOGIN_URL = '/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

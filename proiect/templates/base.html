@@ -20,6 +20,7 @@
                     {% else %}
                         <a href="{% url 'aplicatie1:start_pontaj' %}" class="btn btn-success">Pornire pontaj</a>
                      {% endif %}
+                    <a href="{% url 'userprofile:listare_utilizatori' %}" class="btn">User list</a>
                     <a class="btn" href="{% url 'logout' %}">Logout</a>
                 {% endif %}
 
