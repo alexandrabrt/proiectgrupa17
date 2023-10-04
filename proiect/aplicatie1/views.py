@@ -70,9 +70,13 @@ class UpdateLocationView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 class LocationView(LoginRequiredMixin, ListView):
     model = Location
     template_name = 'aplicatie1/location_index.html'
+    paginate_by = 5
+    queryset = model.objects.filter(active=1)
+    context_object_name = 'locations'
 
     def get_context_data(self, *args, **kwargs):
         data = super(LocationView, self).get_context_data(*args, **kwargs)
+        print(self.request.GET.get('page'))
         if self.request.user.is_superuser:
             data['all_location'] = Location.objects.all()
         else:
